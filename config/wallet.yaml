@@ -1,0 +1,17 @@
+Env: dev   # 配置环境
+Port: 8078 #端口
+Charset: UTF-8
+
+postgresql:
+  db_user: wallet
+  db_pass: wallet
+  db_name: wallet
+  db_host: 127.0.0.1
+  db_port: 5432
+
+redis:
+  db_host: 127.0.0.1
+  db_port: 6379
+  db_user:
+  db_pass:
+  db_name: 5

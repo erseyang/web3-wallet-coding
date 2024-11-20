@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres:
+    hostname: 127.0.0.1
+    container_name: wallet-postgres
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: wallet
+      POSTGRES_USER: wallet
+      POSTGRES_PASSWORD: wallet123.
+    volumes:
+      - /Users/eric/docker/postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  redis:
+    container_name: redis-wallet
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - /Users/eric/docker/redis/data:/data
+      - /Users/eric/docker/redis/conf:/usr/local/etc/redis
+      - /Users/eric/docker/redis/log:/var/log/redis
+
