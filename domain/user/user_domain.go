@@ -8,6 +8,7 @@ type User struct {
 	Wallet   Wallet `json:"wallet"`
 	Password string `json:"password"`
 	Salt     string `json:"salt"`
+	Account  string `json:"account"`
 }
 
 func (u *User) TableName() string {

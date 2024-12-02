@@ -56,6 +56,7 @@ create table t_transfer_log
     from_user_id    varchar(45),
     to_user_id      varchar(45),
     amount          decimal(10, 9),
+    transfer_no     varchar(45),
     transfer_status varchar(1),
     transfer_type varchar(1),
     create_ts       timestamp
@@ -67,8 +68,8 @@ on table t_transfer_log is 'transfer log';
 comment
 on column t_transfer_log.id is 'id,auto increment';
 
-comment
-on column t_transfer_log.from_user_id is 'from user id';
+comment on column t_transfer_log.from_user_id is 'from user id';
+        comment on column t_transfer_log.transfer_no  is 'transfer no ';
 
 comment
 on column t_transfer_log.to_user_id is 'to user id';
